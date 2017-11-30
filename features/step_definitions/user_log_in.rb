@@ -1,6 +1,6 @@
 Given("The following user exist") do |table|
   table.hashes.each do |user|
-    User.create!(user)
+    FactoryBot.create(:user, user)
   end
 end
 
