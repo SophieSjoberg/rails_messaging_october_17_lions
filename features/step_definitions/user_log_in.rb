@@ -1,9 +1,12 @@
 Given("The following user exist") do |table|
-  User.create
+  table.hashes.each do |user|
+    User.create!(user)
+  end
 end
 
 Given("I visit sign in page") do
-  visit '/users/sign_in'
+  # visit '/users/sign_in'
+  visit new_user_session_path
 end
 
 Given("I fill in the {string} with {string}") do |field_name, value|
@@ -18,8 +21,12 @@ Given("I click {string} button") do |button|
   click_link_or_button button
 end
 
-Then("I should be on the {string} page") do |string|
-  visit '/welcome/index'
+Then("show me the page") do
+  save_and_open_page
+end
+
+Then("I should be on the landing page") do
+  expect(current_path).to eq root_path
 end
 
 Then("I should see {string}") do |text|
