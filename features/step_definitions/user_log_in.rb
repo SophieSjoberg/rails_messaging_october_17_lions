@@ -5,7 +5,6 @@ Given("The following user exist") do |table|
 end
 
 Given("I visit sign in page") do
-  # visit '/users/sign_in'
   visit new_user_session_path
 end
 

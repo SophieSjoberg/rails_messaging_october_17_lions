@@ -24,10 +24,10 @@ Feature: Log in
     Then I should be on the sign in page
     And I should see "Invalid Email or password."
 
-    Scenario: User is notified that he provided invalid email
-      Given I visit sign in page
-      And I fill in the "Email" with "invalid.email@gmail.com"
-      And I fill in the "Password" with my "olivolja"
-      And I click "Log in" button
-      Then I should be on the sign in page
-      And I should see "Invalid Email or password."
+  Scenario: User is notified that he provided invalid email
+    Given I visit sign in page
+    And I fill in the "Email" with "invalid.email@gmail.com"
+    And I fill in the "Password" with my "olivolja"
+    And I click "Log in" button
+    Then I should be on the sign in page
+    And I should see "Invalid Email or password."
