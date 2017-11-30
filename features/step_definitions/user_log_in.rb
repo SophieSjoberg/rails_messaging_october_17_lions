@@ -1,24 +1,20 @@
-Given("I visit the landing page") do
-  visit root_path
+Given("The following user exist") do |table|
+  User.create
 end
 
-When("I fill in my email and password") do
+Given("I visit sign in page") do
+  visit '/users/sign_in'
+end
+
+Given("I fill in the {string} with {string}") do |field_name, value|
+  fill_in field_name, with: value
+end
+
+Given("I fill in the {string} with my {string}") do |string, string2|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("Click the {string} button") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I fill in the {string} with {string}") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I fill in the {string} with my {string}") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I click {string} button") do |string|
+Given("I click {string} button") do |string|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
