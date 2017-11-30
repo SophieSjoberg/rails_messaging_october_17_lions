@@ -32,3 +32,7 @@ end
 Then("I should see {string}") do |text|
   expect(page).to have_content text
 end
+
+Then("I should be on the sign in page") do
+  expect(current_path).to eq new_user_session_path
+end
