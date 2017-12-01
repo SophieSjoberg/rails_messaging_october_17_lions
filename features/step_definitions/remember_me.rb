@@ -1,8 +1,15 @@
 Given("I check the {string} check_box") do |check_box|
-  page.check('Remember me')
+  check('Remember me')
 
 end
 
-Then("I would like my user login information to be stored") do
-  
+Given(/^I switch to a new window$/) do
+  Capybara.current_session.driver.reset!
+  window = open_new_window
+  switch_to_window(window)
+  visit root_path
+end
+
+Then('I would like my user login information to be stored') do
+  expect(page).to have_content 'Logout'
 end
