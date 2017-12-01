@@ -11,5 +11,9 @@ Given(/^I switch to a new window$/) do
 end
 
 Then('I would like my user login information to be stored') do
-  expect(page).to have_content 'Logout'
+end
+
+
+Then(/^I would like my user login information not to be stored$/) do
+  expect(page).to_not have_content 'Logout'
 end
