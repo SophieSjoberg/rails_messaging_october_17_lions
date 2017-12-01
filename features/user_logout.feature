@@ -5,12 +5,12 @@ Feature: Log out
 
   Background:
     Given The following user exist
-    | name   | email                             | password    |
-    | Sophie | sophie.sjoberg@gmail.com          | olivolja    |
+      | name    | email                    | password |
+      | Sophie  | sophie.sjoberg@gmail.com | olivolja |
 
   Scenario: Successfully log out
     Given I am logged in as "sophie.sjoberg@gmail.com"
     And I visit the landing page
-  	When I click "Logout" button
-  	Then I should be on the landing page
-  	And I should see "Signed out successfully"
+    When I click "Logout" button
+    Then I should be on the landing page
+    And I should see "Signed out successfully"
