@@ -10,7 +10,7 @@ Feature: Log out
     | Daniel | daniel@random.com | password |
 
   Scenario: Successfully log out
-    Given I am logged in as "jenny@random.com"
+    Given I am logged in as "Jenny"
     And I visit the landing page
     When I click "Logout" button
     Then I should be on the landing page
